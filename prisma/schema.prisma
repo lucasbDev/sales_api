@@ -30,3 +30,15 @@ model Customers {
 
   @@map("customers")
 }
+
+model Product {
+  id String @id @default(uuid())
+  name String
+  price Int
+  quantity Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  @@map("product")
+
+}

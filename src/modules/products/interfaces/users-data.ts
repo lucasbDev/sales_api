@@ -1,8 +1,8 @@
-export type UsersEntity = {
+export type Users = {
     id?: string
     name: string
     password: string
     avatar: string | null
     createdAt: Date | null
-    updateAt: Date | null
+    updatedAt: Date | null
 }
