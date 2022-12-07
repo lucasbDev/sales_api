@@ -6,19 +6,21 @@ import { ProductRepository } from "../repositories/productsRepository";
 
 export class CreateProductService {
     constructor( private productRepository: ProductRepository) {}
-    async execute({name, price, quantity}: IRequest): Promise<Product | null> {
-        const productExists = await this.productRepository.findByName(CreateProductService.name);
-        if (productExists) {
-            throw new AppError('There is already a product with this name');  
+    async execute(name: string): Promise<Product | null> {
+        const product = await this.productRepository.findByName(name);
+        if (!product) {
+            // throw new AppError('There is already a product with this name or not existis'){
+            return null
         }
 
-        const product = this.productRepository.create({
-            name,
-            price,
-            quantity,
-            createdAt: null,
-            updatedAt: null
-        });
+
+        // const product = this.productRepository.create({
+        //     name,
+        //     price,
+        //     quantity,
+        //     createdAt: null,
+        //     updatedAt: null
+        // });
         
         return product
     }
