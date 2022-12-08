@@ -1,10 +1,7 @@
-import AppError from "@shared/errors/AppError";
-import { CipherNameAndProtocol } from "tls";
-import { Product } from "../interfaces";
-import { IRequest } from "../interfaces";
-import { ProductRepository } from "../repositories/productsRepository";
+import { Product } from "@modules/products/interfaces";
+import { ProductRepository } from "@modules/products/repositories";
 
-export class LisProductService {
+export class ListProductService {
     constructor( private productRepository: ProductRepository) {}
     async perform(): Promise<Product[]> {
         const result = await this.productRepository.findMany();    

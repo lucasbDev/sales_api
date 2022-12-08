@@ -1,8 +1,6 @@
 import AppError from "@shared/errors/AppError";
-import { CipherNameAndProtocol } from "tls";
-import { Product } from "../interfaces";
-import { IRequest } from "../interfaces";
-import { ProductRepository } from "../repositories/productsRepository";
+import { Product } from "@modules/products/interfaces";
+import { ProductRepository } from "@modules/products/repositories";
 
 export class CreateProductService {
     constructor( private productRepository: ProductRepository) {}
@@ -13,6 +11,7 @@ export class CreateProductService {
         }
 
         const result = this.productRepository.create({
+            id: data.id,
             name: data.name,
             price: data.price,
             quantity: data.quantity,
