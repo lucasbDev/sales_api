@@ -38,5 +38,12 @@ export class ProductRepository implements  ProductUseCase {
                 }
              })
          }
+         
+            async findMany(): Promise<Product[]> {
+                const returnProduct = await prisma.product.findMany()
+                    if (!returnProduct) {
+                    }
+                    return returnProduct
+                }
 
 }
