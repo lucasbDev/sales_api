@@ -1,12 +1,12 @@
 import AppError from "@shared/errors/AppError";
-import { Product } from "@modules/products/interfaces";
+import { Product, ProductService } from "@modules/products/interfaces";
 import { ProductRepository } from "@modules/products/repositories";
 
 
 
-export class DeleteProductService {
+export class DeleteProductService implements ProductService{
     constructor( private productRepository: ProductRepository) {}
-    public async perform(data: Product ) {
+    public async execute(data: Product ) {
         const {
          id,
          name,

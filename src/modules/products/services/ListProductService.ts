@@ -1,9 +1,9 @@
-import { Product } from "@modules/products/interfaces";
+import { Product, ProductService } from "@modules/products/interfaces";
 import { ProductRepository } from "@modules/products/repositories";
 
-export class ListProductService {
+export class ListProductService implements ProductService {
     constructor( private productRepository: ProductRepository) {}
-    async perform(): Promise<Product[]> {
+    async execute(): Promise<Product[]> {
         const result = await this.productRepository.findMany();    
         return result 
     }

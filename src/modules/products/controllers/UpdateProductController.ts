@@ -6,7 +6,7 @@ export class UpdateProductController {
     public async handle(request: Request,response: Response) {
         const { id } = request.params
         const { name, price, quantity, createdAt, updatedAt } = request.body
-        const result = await this.updateProductService.perform({
+        const result = await this.updateProductService.execute({
             id,
             name,
             price,

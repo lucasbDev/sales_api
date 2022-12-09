@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { makeCreateProductController, makeDeleteProductController, makelistProductController, makeshowProductController, makeupdateProductController } from "@modules/products/factories"
 
-const productsRouter = Router();
+export const productsRouter = Router();
 
 productsRouter.get('/', makelistProductController().handle)
 productsRouter.get('/:id', makeshowProductController().handle)

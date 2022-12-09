@@ -5,7 +5,7 @@ export class DeleteProductController {
     constructor(private readonly deleteProductService: DeleteProductService) {}
     public async handle(req: Request, res: Response) {
         const product = req.body
-        await this.deleteProductService.perform(product)
+        await this.deleteProductService.execute(product)
         return res.json([])     
     }
 }

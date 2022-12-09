@@ -1,11 +1,11 @@
 import AppError from "@shared/errors/AppError";
-import { Product } from "@modules/products/interfaces";
+import { Product, ProductService } from "@modules/products/interfaces";
 import { ProductRepository } from "@modules/products/repositories";
 
 
-export class UpdateProductService {
+export class UpdateProductService implements ProductService{
     constructor( private productRepository: ProductRepository) {}
-    public async perform (data: Product): Promise<Product> {
+    public async  execute(data: Product): Promise<Product> {
         const product = await this.productRepository.finById(data.id);
             if (!product){
                 throw new AppError('Product not found!')
