@@ -1,6 +1,0 @@
-export * from './products-repository'
-export * from './'
-export * from './users-data'
-export * from './product-data'
-export * from './IRequest'
-export * from './product-service'

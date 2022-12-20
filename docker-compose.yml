@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    entrypoint: .docker/entrypoint.sh
+    container_name: apivendas-api
+    ports:
+      -3333:3333
+    volumes:
+      -.:/home/node/app
+    depends_on:
+      - db
+    
+  db:
+    build: ./docker/postgres
+    container_name: apivendas-db
+    restart: always
+    tty: true
+    ports:
+      -"5432:5432"
+    volumes:
+      -.docker/dbata:/var/lib/postgresql/
+    environment:
+      - POSTGRES_PASSWORD=170702010
+      - POSTGRES_DB=apivendas
+      

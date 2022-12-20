@@ -1,5 +1,0 @@
-export * from './CreateProductService'
-export * from './DeleteProductService'
-export * from './ListProductService'
-export * from './ShowProductService'
-export * from './UpdateProductService'

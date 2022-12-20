@@ -2,13 +2,13 @@ import Express, { NextFunction, Request, Response }  from "express";
 import cors from 'cors';
 import routes from "./routes";
 import AppError from "@shared/errors/AppError";
+import '@shared/typeorm';
 
 const app = Express();
 
 app.use(cors());
 app.use(Express.json());
 
-app.use(routes)
 
 app.use((error: Error, request:Request, response:Response,next: NextFunction,) => {
     if (error instanceof AppError) {
