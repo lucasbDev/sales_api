@@ -3,7 +3,7 @@ import { Request, Response } from 'express'
 import { ListProductService } from '../services/List-Product-Service'
 
 export class ListProductController{
-    async list(request: Request,response: Response) {
+    async index(request: Request,response: Response) {
         const listProduct = new ListProductService()
         const result = await listProduct.execute()
         if(!result){

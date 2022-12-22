@@ -4,9 +4,13 @@ import { CreateProductService } from '../services/Create-Product-Service'
 
 export class CreateProductController{
     async create(request: Request,response: Response) {
-        const { data } = request.body
+        const { name, price,quantity } = request.body
         const createProduct = new CreateProductService()
-        const result = await createProduct.execute(data)
+        const result = await createProduct.execute({
+            name,
+            price,
+            quantity,
+        })
         if(!result){
             throw new AppError('Não foi possível criar o produto!')
         }

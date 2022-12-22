@@ -3,10 +3,16 @@ import { Request, Response } from 'express'
 import { UpdateProductService } from '../services/Update-Product-Service'
 
 export class UpdateProductController{
-    async show(request: Request,response: Response) {
-        const {id} = request.params
+    async update(request: Request,response: Response) {
+        const { name, price, quantity } = request.body
+        const { id } = request.params
         const updateProduct = new UpdateProductService()
-        const result = await updateProduct.execute(id) //corrigir
+        const result = await updateProduct.execute({
+            id,
+            name,
+            price,
+            quantity
+        }) //corrigir
         if(!result){
             throw new AppError('não foi possível atualizar o produto!')
         }

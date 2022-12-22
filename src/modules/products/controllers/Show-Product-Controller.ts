@@ -6,7 +6,7 @@ export class ShowProductController{
     async show(request: Request,response: Response) {
         const {id} = request.params
         const showProduct = new ShowProductService()
-        const result = await showProduct.execute(id) //corrigir
+        const result = await showProduct.execute({id}) //corrigir
         if(!result){
             throw new AppError('Produto não encontrado! ')
         }
