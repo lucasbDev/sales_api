@@ -13,6 +13,7 @@ $ yarn
 ```bash
 # development
 $ yarn dev
+```
 
 ## Ferramentas utilizadas
 
@@ -24,4 +25,4 @@ $ yarn dev
   <img align="center" alt="Postgres" height="70" width="50" src="https://github.com/tandpfun/skill-icons/blob/main/icons/PostgreSQL-Dark.svg">
   <img align="center" alt="Typescript" height="70" width="50" src="https://github.com/tandpfun/skill-icons/blob/main/icons/TypeScript.svg">
   <img align="center" alt="Docker" height="70" width="50" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Docker.svg">
-  </div>
+ </div>
