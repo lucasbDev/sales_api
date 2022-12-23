@@ -8,6 +8,7 @@ import {
     UpdateProductService
 } from '../services/index'
 
+
 export default class ProductsController {
     public async create(request: Request,response: Response) {
         const { name, price,quantity } = request.body
