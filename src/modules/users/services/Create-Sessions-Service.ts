@@ -1,6 +1,7 @@
 import AppError from '@shared/errors/AppError';
 import { compare, hash } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
+import authConfig from '@config/auth'
 import { getCustomRepository } from 'typeorm'
 import User  from '../typeorm/entities/User'
 import UsersRepository from '../typeorm/repositories/user-repository';
@@ -30,9 +31,9 @@ export class CreateSessionService {
             throw new AppError('Senha ou e-mail incorreto!', 401);
         }
 
-        const token = sign({}, 'a958c6583a9384936d0f432841308a51', {
+        const token = sign({}, authConfig.jwt.secret, {
             subject: user.id,
-            expiresIn: '1d',
+            expiresIn: authConfig.jwt.expiresIn,
         }) //payload //hash //
 
         

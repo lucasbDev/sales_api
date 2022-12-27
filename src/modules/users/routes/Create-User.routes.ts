@@ -1,6 +1,7 @@
 import { Router } from "express";
 import UsersController  from "../controllers/User-Controller"
 import { celebrate, Joi, Segments } from 'celebrate'
+import isAuth from "../middlewares/isAuth";
 
 const usersRouter = Router();
 const usersController = new UsersController();
@@ -16,7 +17,7 @@ celebrate({
     usersController.create
 )
 
-usersRouter.get('/', usersController.index)
+usersRouter.get('/', isAuth, usersController.index)
 
 
 export default usersRouter;
