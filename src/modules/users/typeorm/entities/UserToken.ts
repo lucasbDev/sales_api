@@ -7,8 +7,8 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-@Entity('userToken')
-export default class User {
+@Entity('user_tokens')
+export default class UserToken {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
