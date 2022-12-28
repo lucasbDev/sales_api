@@ -3,6 +3,7 @@ import 'express-async-errors'
 import cors from 'cors';
 import { errors } from 'celebrate'
 import routes from "./routes";
+import UploadConfig from "@config/upload"
 import AppError from "@shared/errors/AppError";
 import '@shared/typeorm';
 
@@ -10,6 +11,7 @@ const app = Express();
 
 app.use(cors());
 app.use(Express.json());
+app.use('/files', Express.static(UploadConfig.directory))
 app.use(routes)
 app.use(errors());
 

@@ -1,5 +1,5 @@
 import productsRouter from "@modules/products/routes/Create-Product.routes";
-import usersRouter from "@modules/users/routes/Create-User.routes";
+import usersRouter from "@modules/users/routes/Users.routes";
 import sessionsRouter from "@modules/users/routes/Sessions.routes";
 import { Router } from "express";
 
