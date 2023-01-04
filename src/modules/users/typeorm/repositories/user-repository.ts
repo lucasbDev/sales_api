@@ -5,7 +5,7 @@ import User from '../entities/User';
 class UsersRepository extends Repository<User> {
   public async findByName(name: string): Promise<User | undefined> {
     const user = await this.findOne({
-where: {
+      where: {
         name,
       },
     });
