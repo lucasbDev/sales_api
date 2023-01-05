@@ -3,6 +3,8 @@ import usersRouter from "@modules/users/routes/Users.routes";
 import sessionsRouter from "@modules/users/routes/Sessions.routes";
 import pswdRouter from "@modules/users/routes/password.routes";
 import profileRouter from "@modules/users/routes/Profile.routes";
+import customersRouter from "@modules/customers/routes/Customers.routes";
+
 import { Router } from "express";
 
 const routes = Router();
@@ -12,5 +14,6 @@ routes.use('/users', usersRouter);
 routes.use('/sessions', sessionsRouter);
 routes.use('/password', pswdRouter);
 routes.use('/profile', profileRouter);
+routes.use('/custumers', customersRouter);
 
 export default routes

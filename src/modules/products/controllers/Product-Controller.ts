@@ -33,7 +33,7 @@ export default class ProductsController {
             name,
             price,
             quantity
-        }) //corrigir
+        }) 
         if(!result){
             throw new AppError('não foi possível atualizar o produto!')
         }
@@ -43,7 +43,9 @@ export default class ProductsController {
     public async show(request: Request,response: Response) {
         const {id} = request.params
         const showProduct = new ShowProductService()
-        const result = await showProduct.execute({id}) //corrigir
+        const result = await showProduct.execute({
+            id
+        }) 
         if(!result){
             throw new AppError('Produto não encontrado! ')
         }
@@ -62,7 +64,9 @@ export default class ProductsController {
     async delete(request: Request,response: Response) {
         const {id} = request.params
         const deleteProduct = new DeleteProductService()
-        const result = await deleteProduct.execute({id}) //corrigir
+        await deleteProduct.execute({
+            id
+        }) 
         
         return response.status(200).json([])
     }
