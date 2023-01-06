@@ -19,6 +19,7 @@ export default class UsersController {
         }
         return response.status(200).json(result)
     }
+    
     async index(request: Request,response: Response) {
         const listUser = new ListUserService()
         const result = await listUser.execute()
